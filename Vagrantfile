@@ -69,7 +69,11 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
 
-  config.vm.provision "shell", path: "bootstrap.sh" 
+  # installing php 7.2
+  #config.vm.provision "shell", path: "bootstrap.sh" 
+
+  # installing php5.6
+  config.vm.provision "shell", path: "php5.sh"
 
 
 

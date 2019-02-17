@@ -8,38 +8,23 @@ apt-get upgrade
 apt-get install -y git
 
 # Apache
-apt-get install -y apache2
+apt-get install -y apache2 
 
-# Enable Apache Mods
-a2enmod rewrite
+sudo service apache2 restart
 
-# Add onrej PPA Repo
-apt-add-repository ppa:ondrej/php
-apt-get update
-
-# Install php 7
-apt-get install -y php7.2
-
-# PHP Apache Mod
-apt-get install -y libapache2-mod-php7.2
-
-# Restart Apache
-service apache2 restart
-
-# PHP Mods
-apt-get install -y php7.2-common
-apt-get install -y php7.2-mcrypt
-apt-get install -y php7.2-zip
-
-# Set MySQL Pass, the user gonna be root by default
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 
-# Install MySQL
-apt-get install -y mysql-server
+apt-get install -y mysql-server libapache2-mod-auth-mysql php5-mysql
 
-# PHP-MySQL lib
-apt-get install -y php7.2-mysql
+apt-get install -y php5
+
+apt-get upgrade
+ 
+#if needed to change the directory and file permision
+#sudo chmod 775 /var/www/tml
 
 # Restart Apache
 sudo service apache2 restart
+
+#still need to install phpmyadmin
