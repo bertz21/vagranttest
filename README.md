@@ -1,4 +1,4 @@
-# vagranttest
+# Learning Vagrant
 Learning vagrant and create LAMP stack
-PHP7.2 not working with phpmyadmin
-PHP5.6 working with phpmyadmin
+For some reason PHP7.2 not working with phpmyadmin 
+therefore by using the PHP version 5.6  is better and stable with the phpmyadmin
